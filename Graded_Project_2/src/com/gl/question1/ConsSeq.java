@@ -45,7 +45,7 @@ public class ConsSeq
 
 			while (!queue.isEmpty() && queue.peek() == max) {
 	
-				System.out.print("Construction Sequence for given day " + (1 + i) + " = " + (queue.poll()));
+				System.out.println("Construction Sequence for given day " + (1 + i) + " = " + (queue.poll()));
 				
 
 				max--;
