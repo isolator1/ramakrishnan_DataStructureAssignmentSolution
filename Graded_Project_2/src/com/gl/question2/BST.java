@@ -4,7 +4,6 @@ class Node {
 	int val;
 	Node left, right;
 
-	
 	Node(int item) {
 		val = item;
 		left = right = null;
@@ -16,7 +15,6 @@ class BST {
 	static Node prevNode = null;
 	static Node headNode = null;
 
-	
 	static void flattenBTToSkewed(Node root) {
 		if (root == null) {
 			return;
@@ -32,11 +30,10 @@ class BST {
 			root.left = null;
 			prevNode = root;
 		}
-			flattenBTToSkewed(rightNode);
+		flattenBTToSkewed(rightNode);
 
 	}
 
-	
 	static void traverseRightSkewed(Node root) {
 		if (root == null) {
 			return;
@@ -45,19 +42,16 @@ class BST {
 		traverseRightSkewed(root.right);
 	}
 
-	public class Main {
-		
-		public static void main(String[] args) {
-		
-			
-			BST.node = new Node(50);
-			BST.node.left = new Node(30);
-			BST.node.right = new Node(60);
-			BST.node.left.left = new Node(10);
-			BST.node.right.left = new Node(55);
-	
-			flattenBTToSkewed(node);
-			traverseRightSkewed(headNode);
-		}
+	public static void main(String[] args) {
+
+		BST.node = new Node(50);
+		BST.node.left = new Node(30);
+		BST.node.right = new Node(60);
+		BST.node.left.left = new Node(10);
+		BST.node.right.left = new Node(55);
+
+		flattenBTToSkewed(node);
+		System.out.println("The resultant  output is :");
+		traverseRightSkewed(headNode);
 	}
 }
